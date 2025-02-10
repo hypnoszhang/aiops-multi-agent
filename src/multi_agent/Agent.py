@@ -4,15 +4,16 @@ import time
 from src.multi_agent.Coordinator import Coordinator
 import json
 
+
 # Agent基础类
 class Agent(threading.Thread):
-    def __init__(self, name, llm):
+    def __init__(self, name, llm, coordinator):
         super().__init__()
         self.name = name
         self.llm = llm
         self.message_queue = Queue()
         self.running = True
-        self.coordinator =Coordinator()
+        self.coordinator = coordinator
 
     def receive_message(self, message):
         self.message_queue.put(message)

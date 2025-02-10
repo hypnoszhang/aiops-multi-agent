@@ -8,12 +8,9 @@ class Coordinator:
     def dispatch(self, message):
         # 基于消息类型路由
         if message["type"] == "alert":
-            self.agents["log_analysis"].receive_message(message)
-            self.agents["diagnosis"].receive_message(message)
+            self.agents["LogAnalysis"].receive_message(message)
+            self.agents["Diagnosis"].receive_message(message)
         elif message["type"] == "log_analysis":
-            self.agents["diagnosis"].receive_message(message)
+            self.agents["Diagnosis"].receive_message(message)
         elif message["type"] == "diagnosis":
-            self.agents["decision"].receive_message(message)
-
-
-coordinator = Coordinator()
+            self.agents["Monitoring"].receive_message(message)
