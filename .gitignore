@@ -1,0 +1,11 @@
+# 忽略所有 .env 文件
+.env
+# 忽略所有 .log 文件
+*.log
+# 忽略所有临时文件
+*~
+# 忽略 PyCharm 的配置文件
+.idea/
+*.iml
+
+Test/

@@ -8,12 +8,18 @@ from src.multi_agent.agents.DiagnosisAgent import DiagnosisAgent
 from src.multi_agent.Coordinator import Coordinator
 from src.multi_agent.Logger import Logger
 
-log = Logger("Main", "console", "INFO").get_logger()
+log = Logger("LLMAgent", "console", "INFO").get_logger()
 
 if __name__ == "__main__":
     try:
         log.info(" initializing LLM environment...")
-        llm = ChatOpenAI(temperature=0, model_name="gpt-4", max_tokens=100,openai_api_key="test123456")
+        llm = ChatOpenAI(
+                        temperature=0,
+                        model_name="gpt-4",
+                        max_tokens=100,
+                        openai_api_key="sk-CO5HolWE6Hlsw0hcZeVZKERoS651Pows8ihxomrPk2LQqQrv",
+                        openai_api_base="http://bdi-gpt-stg.myhll.cn/gpt-4",
+                    )
         coordinator = Coordinator()
         # 创建Agent实例
         agents = {

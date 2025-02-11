@@ -40,3 +40,4 @@ class DiagnosisAgent(Agent):
                     "action_steps": []
                 }
             })
+            self.stop()

@@ -40,3 +40,4 @@ class LogAnalysisAgent(Agent):
                     "recommendations": []
                 }
             })
+            self.stop()
